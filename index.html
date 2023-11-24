@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="bandera" src="bandera.png" alt="Bandera" placeholder="Informacion" onclick="mostrarTooltip()" />
+
+    <div id="tooltip" style="display: none;">Digamos que hay un pedazo de carne. Los piratas tendrían un banquete y se lo comerían, pero los héroes lo compartirían con otras personas. ¡Yo quiero toda la carne!</div>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="perfil">
+            <div id="fecha"></div>
+            <h1>Hola, Mauricio Ramos</h1>
+            <span>Vamos a Cumplir tus Metas</span>
+        </header>
+
+        <!-- Agregar Tarea -->
+        <section class="agregar-tarea">
+            <input type="text" id="input" placeholder="Agregar una tarea">
+            <i id="boton-enter" class="fas fa-plus-circle"></i>
+        </section>
+
+        <!-- Sección de Tareas -->
+        <section class="seccion-tarea">
+            <h3>Estas son tus Tareas Pendientes!!!</h3>
+            <ul id="lista">
+                <!-- Contenido actual -->
+            </ul>
+        </section>
+
+        <img id="gifLuffy" src="luffy.gif" alt="Luffy">
+    </div>
+
+    <!-- Elemento de audio -->
+    <audio id="miAudio" loop>
+        <source src="WeAre.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Scripts al final del cuerpo -->
+    <script src="index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var miAudio = document.getElementById('miAudio');
+            var bandera = document.getElementById('bandera');
+
+            // Agregar evento al clic en la bandera para iniciar la reproducción
+            bandera.addEventListener('click', function() {
+                miAudio.play();
+            });
+        });
+    </script>
+</body>
+</html>
